@@ -16,4 +16,4 @@ jobs:
       uses: actions/checkout@v1
 
     - name: Run OracleCommandGenerator.SourceGenerators.Tests
-      run: dotnet test ${{ matrix.project.directory }}OracleCommandGenerator.SourceGenerators.Tests/OracleCommandGenerator.SourceGenerators.Tests.csproj
+      run: dotnet test ./OracleCommandGenerator.SourceGenerators.Tests/OracleCommandGenerator.SourceGenerators.Tests.csproj
