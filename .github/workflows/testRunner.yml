@@ -1,0 +1,19 @@
+name: Run Tests
+
+on: [push]
+
+jobs:
+  run-tests:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Setup .NET 6.0
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+
+    - name: Checkout Code
+      uses: actions/checkout@v1
+
+    - name: Run OracleCommandGenerator.SourceGenerators.Tests
+      run: dotnet test ${{ matrix.project.directory }}OracleCommandGenerator.SourceGenerators.Tests/OracleCommandGenerator.SourceGenerators.Tests.csproj
